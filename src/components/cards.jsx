@@ -29,7 +29,7 @@ export const StarWarsCard = ({ name, image, onClick, id, type }) => {
                     alt={name}
                 />
                 <div className="card-body text-center">
-                    <h5 className="card-title">{name}</h5>
+                    <h5 className="card-title m-1">{name}</h5>
                     {onClick && (
                         <button className="btn btn-outline-warning mt-2" onClick={handleClick}>
                             Más info
