@@ -6,8 +6,13 @@ import { useNavigate } from "react-router-dom";
 
 
 export const PlanetList = () => {
+
+    // Estado para guardar los planetas recibidos de la API
+
     const [planets, setPlanets] = useState([]);
     const navigate = useNavigate();
+
+    // useEffect se ejecuta una vez al cargar el componente (porque el array de dependencias está vacío []) y Llama a la API para obtener los planetas y guarda el resultado en el estado
 
     useEffect(() => {
         getAllPlanets()

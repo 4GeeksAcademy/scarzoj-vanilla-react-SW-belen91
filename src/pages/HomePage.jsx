@@ -4,16 +4,30 @@ import { StarWarsCard } from "../components/cards";
 
 
 export const HomePage = () => {
+
+    // Estado para guardar la lista de personajes
+
     const [people, setPeople] = useState([]);
+
+    // Estado para guardar la lista de planetas
+
     const [planets, setPlanets] = useState([]);
 
     useEffect(() => {
+
+    // Función asíncrona que obtiene los datos de personajes y planetas
         const fetchData = async () => {
             const person = await getAllPeople();
             const planets = await getAllPlanets();
+                        
+        // Guardamos los resultados en sus respectivos estados
+            
             setPeople(person.results);
             setPlanets(planets.results);
         };
+
+    // Llamamos a la función cuando el componente se monta
+
         fetchData();
     }, []);
 
